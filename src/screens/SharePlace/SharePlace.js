@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import { connect } from 'react-redux';
+import { addPlaces } from '../../store/actions/index';
 import ButtonWithBackground from '../../components/UI/ButtonWithBackground/ButtonWithBackground';
-import { addPlaces } from '../../store/actions/index'
+import PlaceInput from '../../components/PlaceInput/PlaceInput';
+import MainText from '../../components/UI/MainText/MainText';
+import HeadingText from '../../components/UI/HeadingText/HeadingText';
+import PickImage from '../../components/PickImage/PickImage';
+import PickLocation from '../../components/PickLocation/PickLocation';
 
 class SharePlaceScreen extends Component {
   constructor(props) {
@@ -26,18 +31,16 @@ class SharePlaceScreen extends Component {
 
   render() {
     return (
-      <ScrollView contentContainerStyle={styles.container}>
-        <Text>Share a Place with us!</Text>
-        <View style={styles.palceholder}>
-          <Text>Image Preview!</Text>
+      <ScrollView>
+        <View style={styles.container}>
+          <MainText><HeadingText>Share a Place with us!</HeadingText></MainText>
+          <PickImage />
+          <PickLocation />
+          <PlaceInput />
+          <View style={styles.button}>
+            <ButtonWithBackground color="#e56ebb">Share the Place</ButtonWithBackground>
+          </View>
         </View>
-        <ButtonWithBackground color="#e56ebb">Pick Image</ButtonWithBackground>
-        <View style={styles.palceholder}>
-          <Text>Map</Text>
-        </View>
-        <ButtonWithBackground color="#e56ebb">Locate Me</ButtonWithBackground>
-        <TextInput placeholder="Place Name" />
-        <ButtonWithBackground color="#e56ebb">Share the Place</ButtonWithBackground>
       </ScrollView>
     );
   }
@@ -54,6 +57,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee",
     width: "80%",
     height: 150
+  },
+  previewImage: {
+    width: "100%",
+    height: "100%"
+  },
+  button: {
+    margin: 8
   }
 })
 
