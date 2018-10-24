@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text, TextInput, StyleSheet, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import PlaceInput from '../../components/PlaceInput/PlaceInput';
+import ButtonWithBackground from '../../components/UI/ButtonWithBackground/ButtonWithBackground';
 import { addPlaces } from '../../store/actions/index'
 
 class SharePlaceScreen extends Component {
@@ -26,12 +26,36 @@ class SharePlaceScreen extends Component {
 
   render() {
     return (
-      <View>
-        <PlaceInput onPlaceAdded={this.placeAddedHandler} />
-      </View>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text>Share a Place with us!</Text>
+        <View style={styles.palceholder}>
+          <Text>Image Preview!</Text>
+        </View>
+        <ButtonWithBackground color="#e56ebb">Pick Image</ButtonWithBackground>
+        <View style={styles.palceholder}>
+          <Text>Map</Text>
+        </View>
+        <ButtonWithBackground color="#e56ebb">Locate Me</ButtonWithBackground>
+        <TextInput placeholder="Place Name" />
+        <ButtonWithBackground color="#e56ebb">Share the Place</ButtonWithBackground>
+      </ScrollView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center'
+  },
+  palceholder: {
+    borderWidth: 1,
+    borderColor: "black",
+    backgroundColor: "#eee",
+    width: "80%",
+    height: 150
+  }
+})
 
 const mapDispatchToProps = dispatch => {
   return {
