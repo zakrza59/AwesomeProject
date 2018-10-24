@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
-import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
-import HeadingText from '../../components/UI/HeadingText/HeadingText';  
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import startMainTabs from '../MainTabs/startMainTabs';
+import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
+import HeadingText from '../../components/UI/HeadingText/HeadingText';
+import MainText from '../../components/UI/MainText/MainText';
+import ButtonWithBackground from '../../components/UI/ButtonWithBackground/ButtonWithBackground';
+import backgroundImage from '../../assets/background.jpg';
 
 class AuthScreen extends Component {
   loginHandler = () => {
@@ -11,24 +14,24 @@ class AuthScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <HeadingText style={styles.textHeading}>Please Log In</HeadingText>
-        <TouchableOpacity onPress={this.loginHandler}>
-          <View style={styles.button}>
-            <Text>SWITCH TO LOGIN</Text>
+      <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
+        <View style={styles.container}>
+          <MainText>
+            <HeadingText style={styles.textHeading}>Please Log In</HeadingText>
+          </MainText>
+          <ButtonWithBackground onPress={this.loginHandler} color="#29aaf4">
+            SWITCH TO LOGIN
+          </ButtonWithBackground>
+          <View style={styles.inputContainer}>
+            <DefaultInput placeholder="Email" style={styles.input} />
+            <DefaultInput placeholder="Password" style={styles.input} />
+            <DefaultInput placeholder="Confirm Password" style={styles.input} />
           </View>
-        </TouchableOpacity>
-        <View style={styles.inputContainer}>
-          <DefaultInput placeholder="Email" style={styles.input} />
-          <DefaultInput placeholder="Password" style={styles.input} />
-          <DefaultInput placeholder="Confirm Password" style={styles.input} />
+          <ButtonWithBackground onPress={this.loginHandler} color="#29aaf4">
+            SUBMIT
+          </ButtonWithBackground>
         </View>
-        <TouchableOpacity onPress={this.loginHandler}>
-          <View style={styles.button}>
-            <Text>SUBMIT</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -39,17 +42,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
-  button: {
-    backgroundColor: '#4286f4',
-    height: 50,
-    width: 200,
-    borderRadius: 6,
-    alignItems: "center",
-    justifyContent: "center"
+  backgroundImage: {
+    width: '100%',
+    flex: 1
   },
   textHeading: {
     fontSize: 28,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: "#004"
   },
   inputContainer: {
     width: "80%"
