@@ -1,15 +1,15 @@
-import { ADD_PLACES, DELETE_PLACES } from './actionTypes'
+import { ADD_PLACE, DELETE_PLACE } from './actionTypes';
 
-export const addPlaces = (placeName) => {
-  return {
-    type: ADD_PLACES,
-    placeName: placeName
-  };
+export const addPlace = (placeName) => {
+    return {
+        type: ADD_PLACE,
+        placeName: placeName
+    };
 };
 
-export const deletePlaces = (key) => {
-  return {
-    type: DELETE_PLACES,
-    placeKey: key
-  };
+export const deletePlace = (key) => {
+    return {
+        type: DELETE_PLACE,
+        placeKey: key
+    };
 };

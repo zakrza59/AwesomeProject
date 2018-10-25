@@ -15,10 +15,10 @@ class FindPlaceScreen extends Component {
       if (event.id === "sideDrawerToggle") {
         this.props.navigator.toggleDrawer({
           side: "left"
-        })
+        });
       }
     }
-  }
+  };
 
   itemSelectedHandler = key => {
     const selPlace = this.props.places.find(place => {

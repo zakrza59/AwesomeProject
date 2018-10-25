@@ -1,24 +1,30 @@
-import { React, Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { Component } from "react";
+import { View, Image, Button, StyleSheet, Text } from "react-native";
 import ButtonWithBackground from '../UI/ButtonWithBackground/ButtonWithBackground';
 
 class PickLocation extends Component {
   render() {
     return (
-      <View>
-        <View style={styles.palceholder}>
+      <View style={styles.container}>
+        <View style={styles.placeholder}>
           <Text>Map</Text>
         </View>
         <View style={styles.button}>
-          <ButtonWithBackground color="#e56ebb">Locate Me</ButtonWithBackground>
+          <ButtonWithBackground onPress={() => alert('Pick Location!')} color="#29aaf4">
+          Locate Me
+          </ButtonWithBackground>
         </View>
       </View>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
-  palceholder: {
+  container: {
+    width: "100%",
+    alignItems: "center"
+  },
+  placeholder: {
     borderWidth: 1,
     borderColor: "black",
     backgroundColor: "#eee",
@@ -28,6 +34,6 @@ const styles = StyleSheet.create({
   button: {
     margin: 8
   }
-})
+});
 
 export default PickLocation;

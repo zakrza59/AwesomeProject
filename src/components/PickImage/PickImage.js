@@ -1,39 +1,45 @@
-import { React, Component } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import React, { Component } from "react";
+import { View, Image, Button, StyleSheet } from "react-native";
 import ButtonWithBackground from '../UI/ButtonWithBackground/ButtonWithBackground';
-import imagePlaceholder from '../../assets/bill.jpg';
 
+import imagePlaceholder from "../../assets/beautiful-place.jpg";
 
 class PickImage extends Component {
   render() {
     return (
-      <View>
-        <View style={styles.palceholder}>
+      <View style={styles.container}>
+        <View style={styles.placeholder}>
           <Image source={imagePlaceholder} style={styles.previewImage} />
         </View>
         <View style={styles.button}>
-          <ButtonWithBackground color="#e56ebb" onPress={() => alert('Pick image guzik działa')}>Pick Image</ButtonWithBackground>
+          <ButtonWithBackground onPress={() => alert('Pick Image!')} color="#29aaf4">
+          Pick Image
+          </ButtonWithBackground>
         </View>
       </View>
-    )
+    );
   }
 }
 
 const styles = StyleSheet.create({
-  palceholder: {
-    borderWidth: 1,
-    borderColor: "black",
-    backgroundColor: "#eee",
-    width: "80%",
-    height: 150
-  },
-  previewImage: {
-    width: "100%",
-    height: "100%"
-  },
-  button: {
-    margin: 8
-  }
-})
+    container: {
+        width: "100%",
+        alignItems: "center"
+    },
+    placeholder: {
+      borderWidth: 1,
+      borderColor: "black",
+      backgroundColor: "#eee",
+      width: "80%",
+      height: 150
+    },
+    button: {
+      margin: 8
+    },
+    previewImage: {
+        width: "100%",
+        height: "100%"
+    }
+  });
 
 export default PickImage;

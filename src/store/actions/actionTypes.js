@@ -1,2 +1,2 @@
-export const ADD_PLACES = "ADD_PLACES";
-export const DELETE_PLACES = "DELETE_PLACES";
+export const ADD_PLACE = 'ADD_PLACE';
+export const DELETE_PLACE = 'DELETE_PLACE';

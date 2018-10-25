@@ -3,13 +3,14 @@ import {
   View,
   Image,
   Text,
+  Button,
   StyleSheet,
   TouchableOpacity
 } from "react-native";
 import { connect } from "react-redux";
 
 import Icon from "react-native-vector-icons/Ionicons";
-import { deletePlaces } from "../../store/actions/index";
+import { deletePlace } from "../../store/actions/index";
 
 class PlaceDetail extends Component {
   placeDeletedHandler = () => {
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onDeletePlace: key => dispatch(deletePlaces(key))
+    onDeletePlace: key => dispatch(deletePlace(key))
   };
 };
 
