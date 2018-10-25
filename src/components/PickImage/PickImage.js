@@ -11,7 +11,7 @@ class PickImage extends Component {
           <Image source={imagePlaceholder} style={styles.previewImage} />
         </View>
         <View style={styles.button}>
-          <ButtonWithBackground onPress={() => alert('Pick Image!')} color="#29aaf4">
+          <ButtonWithBackground onPress={() => alert('Pick Image!')} color="red">
             Pick Image
           </ButtonWithBackground>
         </View>

@@ -11,6 +11,10 @@ import ButtonWithBackground from '../../components/UI/ButtonWithBackground/Butto
 
 
 class SharePlaceScreen extends Component {
+  static navigatorStyle = {
+    navBarButtonColor: "red"
+  }
+  
   state = {
     placeName: ""
   };
@@ -56,7 +60,7 @@ class SharePlaceScreen extends Component {
             onChangeText={this.placeNameChangedHandler}
           />
           <View style={styles.button}>
-            <ButtonWithBackground color="#29aaf4" onPress={this.placeAddedHandler}>
+            <ButtonWithBackground color="red" onPress={this.placeAddedHandler}>
               Share the Place
             </ButtonWithBackground>
           </View>

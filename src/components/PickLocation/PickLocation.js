@@ -10,7 +10,7 @@ class PickLocation extends Component {
           <Text>Map</Text>
         </View>
         <View style={styles.button}>
-          <ButtonWithBackground onPress={() => alert('Pick Location!')} color="#29aaf4">
+          <ButtonWithBackground onPress={() => alert('Pick Location!')} color="red">
             Locate Me
           </ButtonWithBackground>
         </View>

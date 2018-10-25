@@ -46,7 +46,7 @@ class AuthScreen extends Component {
       <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
         <View style={styles.container}>
           {headingText}
-          <ButtonWithBackground color="#29aaf4" onPress={() => alert("Hello")}>
+          <ButtonWithBackground color="red" onPress={() => alert("Hello")}>
             Switch to Login
           </ButtonWithBackground>
           <View style={styles.inputContainer}>
@@ -84,7 +84,7 @@ class AuthScreen extends Component {
               </View>
             </View>
           </View>
-          <ButtonWithBackground color="#29aaf4" onPress={this.loginHandler}>
+          <ButtonWithBackground color="red" onPress={this.loginHandler}>
             Submit
           </ButtonWithBackground>
         </View>
