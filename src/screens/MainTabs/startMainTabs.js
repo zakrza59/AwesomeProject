@@ -41,6 +41,9 @@ const startTabs = () => {
           }
         }
       ],
+      tabsStyle: {
+        tabBarSelectedButtonCollor: "orange"
+      },
       drawer: {
         left: {
           screen: "awesome-places.SideDrawer"

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import { connect } from "react-redux";
-
 import { addPlace } from "../../store/actions/index";
 import PlaceInput from "../../components/PlaceInput/PlaceInput";
 import MainText from "../../components/UI/MainText/MainText";
@@ -9,6 +8,7 @@ import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import PickImage from "../../components/PickImage/PickImage";
 import PickLocation from "../../components/PickLocation/PickLocation";
 import ButtonWithBackground from '../../components/UI/ButtonWithBackground/ButtonWithBackground';
+
 
 class SharePlaceScreen extends Component {
   state = {
@@ -33,15 +33,12 @@ class SharePlaceScreen extends Component {
   placeNameChangedHandler = val => {
     this.setState({
       placeName: val
-    })
-  }
+    });
+  };
 
   placeAddedHandler = () => {
     if (this.state.placeName.trim() !== "") {
       this.props.onAddPlace(this.state.placeName);
-      this.setState({
-        placeName: ""
-      })
     }
   };
 
@@ -56,7 +53,8 @@ class SharePlaceScreen extends Component {
           <PickLocation />
           <PlaceInput
             placeName={this.state.placeName}
-            onChangeText={this.placeNameChangedHandler} />
+            onChangeText={this.placeNameChangedHandler}
+          />
           <View style={styles.button}>
             <ButtonWithBackground color="#29aaf4" onPress={this.placeAddedHandler}>
               Share the Place
