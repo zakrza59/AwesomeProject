@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image, Button, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import ButtonWithBackground from '../UI/ButtonWithBackground/ButtonWithBackground';
 
 class PickLocation extends Component {
@@ -11,7 +11,7 @@ class PickLocation extends Component {
         </View>
         <View style={styles.button}>
           <ButtonWithBackground onPress={() => alert('Pick Location!')} color="#29aaf4">
-          Locate Me
+            Locate Me
           </ButtonWithBackground>
         </View>
       </View>
