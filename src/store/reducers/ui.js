@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
     case UI_STOP_LOADING:
       return {
         ...state,
-        isLoading: true,
+        isLoading: false,
       }
     default:
       return state
