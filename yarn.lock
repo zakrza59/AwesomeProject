@@ -4232,6 +4232,10 @@ react-is@^16.6.0-alpha.8af6728:
   version "16.6.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.0.tgz#456645144581a6e99f6816ae2bd24ee94bdd0c01"
 
+react-native-image-picker@^0.27.1:
+  version "0.27.1"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.27.1.tgz#32877c667e8c2713466fe178a6c7dd648e6cb5d3"
+
 react-native-maps@^0.22.0:
   version "0.22.0"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.22.0.tgz#0e675120fa6a8b2459ac819edd6be968d07568df"
